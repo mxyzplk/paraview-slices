@@ -3,6 +3,7 @@ import numpy as np
 import sys
 import os
 import string
+import matplotlib.pyplot as plt
 
 if len(sys.argv) != 4:
     print("Not enough arguments")
@@ -55,5 +56,9 @@ for i in range(int(nslices)):
 
     plt.figure(figsize=(8, 6))
 
+    plt.scatter(data_array[:, 0], data_array[:, 3], marker='o', color='b', label=label)
 
+    plt.grid(True)
+    plt.legend()
+    plt.savefig(output_file_path2)
 
